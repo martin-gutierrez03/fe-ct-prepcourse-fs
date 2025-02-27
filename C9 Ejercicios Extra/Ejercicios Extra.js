@@ -6,6 +6,8 @@ function deObjetoAarray(objeto) {
   // Estos elementos debe ser cada par clave:valor del objeto recibido.
   // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
   // Tu código:
+  let arrayDePares = Object.entries(objeto);
+  return arrayDePares;
 }
 
 function numberOfCharacters(string) {
@@ -14,6 +16,19 @@ function numberOfCharacters(string) {
   // Las letras deben estar en orden alfabético.
   // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   // Tu código:
+  let obj = {};
+  // Cuenta las letras
+  for(let i = 0 ; i < string.length; i++){
+    let l = string[i];
+    obj[l] = (obj[l] || 0) + 1;
+  }
+  // Ordena las letras 
+  let nuv = {};
+  Object.keys(obj).sort().forEach(key => {
+    nuv[key] = obj[key];
+  })
+
+  return nuv;
 }
 
 function capToFront(string) {
@@ -22,6 +37,12 @@ function capToFront(string) {
   // Retornar el string.
   // [EJEMPLO]: soyHENRY ---> HENRYsoy
   // Tu código:
+
+  // .toUpperCase() y .toLowerCase(), mayusculas y minusculas respectivamente
+
+  let mayus = string.filter(n =>  n === n.toUpperCase())
+  let minus = string.filter(n =>  n === n.toLowerCase())
+
 }
 
 function asAmirror(frase) {

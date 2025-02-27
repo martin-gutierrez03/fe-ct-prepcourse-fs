@@ -7,6 +7,15 @@ function redondearHaciaArriba(num) {
   // 2.5 ---> 3
   // 0.1 ---> 1
   // Tu código:
+  let redondeado = Math.round(num);
+  if(redondeado === 0 && num !== 0){
+    if(num < 0){
+      redondeado = -1;
+    }else{
+      redondeado = 1;
+    }
+  }
+  return redondeado;
 }
 
 module.exports = redondearHaciaArriba;
